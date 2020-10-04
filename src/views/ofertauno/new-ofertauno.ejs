@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Actualizar productos</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/assets/packages/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="/dist/assets/packages/owl-carousel/owl.theme.default.css">
+    <link rel="stylesheet" href="/dist/assets/packages/animate/animate.css">
+
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/o2system-venus-ui@1.1.0/dist/venus-ui.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="/dist/assets/css/theme.css">
+    <link rel="canonical" href="http://localhost:4000/index.html">
+</head>
+
+
+<body>
+
+    <a href="/" class="btn btn-primary " type="submit">
+      volver a inicio
+    </a>
+
+<div class="col-md-4 mx-auto">
+  <div class="card text-center">
+    <div class="card-header">
+      <h3>Agregue un nuevo producto</h3>
+    </div>
+    <div class="card-body">
+      <form action="/ofertauno/new-ofertauno" method="POST">
+        <div class="form-group">
+            <input type="text" name="name" class="form-control" placeholder="name" autofocus/>
+          </div>
+           <div class="form-group">
+            <input type="text" name="title" class="form-control" placeholder="title" autofocus/>
+           </div>
+           <div class="form-group">
+              <input type="text" name="image" class="form-control" placeholder="imagen 1" autofocus/>
+            </div>
+            <div class="form-group">
+              <input type="text" name="imagedos" class="form-control" placeholder="imagen 2" autofocus/>
+            </div>
+            <div class="form-group">
+              <input type="text" name="imagetres" class="form-control" placeholder="imagen 3" autofocus/>
+            </div>
+            <div class="form-group">
+              <input type="text" name="description" class="form-control" placeholder="descripcion" autofocus/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="color" class="form-control" placeholder="color" autofocus/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="colorstock" class="form-control" placeholder="color stock" autofocus/>
+            </div>
+  
+            <div class="form-group">
+                <input type="text" name="talle" class="form-control" placeholder="talle" autofocus/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="tallestock" class="form-control" placeholder="talle stock" autofocus/>
+            </div>
+  
+            <div class="form-group">
+                <input type="text" name="filtroprice" class="form-control" placeholder="filtro de precio" autofocus/>
+            </div>
+            <div class="form-group">
+              <input type="text" name="price" class="form-control" placeholder="precio" autofocus/>
+            </div>
+            <div class="form-group">
+                    <input type="text" name="oldprice" class="form-control" placeholder="precio anterior" autofocus/>
+            </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+                
+        
+      
+
+        
+  <div class="col-12">
+      <!-- Main Content -->
+      <main class="row">
+    
+          <!-- Category Products -->
+          <div class="col-12">
+              <div class="row">
+                  <div class="col-12 py-3">
+                      <div class="row">
+                          <div class="col-12 text-center text-uppercase">
+                              <h2>Computers</h2>
+                          </div>
+                      </div>
+                      <div class="row">
+                            <% ofertauno.forEach(function (ofertaun) { %>
+    
+                          <!-- Product -->
+                          <div class="col-xl-2 col-lg-3 col-sm-6 my-3">
+                              <div class="col-12 bg-white text-center h-100 product-item">
+                                  <div class="row h-100">
+                                      <div class="col-12 p-0 mb-3">
+                                              <img src="<%= ofertaun.image %>" class="img-fluid">
+                                      </div>
+                                      <div class="col-12 mb-3">
+                                            <%= ofertaun.title %> 
+                                      </div>
+                                      <div class="col-12 mb-3">
+                                              <span class="product-price-old">
+                                                  $<%= ofertaun.price %> 
+                                              </span>
+                                          
+                                      </div>
+                                     
+                                      <a class="btn btn-danger" href="/ofertauno/delete/<%= ofertaun.id %>">
+                                        Eliminar
+                                    </a>
+                                    <a class="btn btn-primary" href="/ofertauno/edit/<%= ofertaun.id %>">
+                                        Editar
+                                    </a>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- Product -->
+                          <% }) %>
+    
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Category Products -->
+    
+        </div>
+
+    </body>
+    </html>

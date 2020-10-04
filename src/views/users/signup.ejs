@@ -1,0 +1,61 @@
+<% include ../partials/_header %>
+
+<section id="breadcumb" style="background:url(images/grid-view/banner.jpg) no-repeat center;background-size:cover;">
+  <div class="bnr-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center p-0">
+          <h1>Login / Register</h1>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><i class="fas fa-angle-right"></i></li>
+            <li><a href="cart.html">Login / Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="login-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+      
+      </div>
+      <div class="col-lg-6 order-details col-md-6">
+        <h4>Register Now <span>(If You haven't any account yet)</span></h4>
+        <form action="/users/signup" method="POST">
+          <input type="text" name="name"class="text regis" placeholder="Name">
+          <input type="email" name="email" class="text email regis2" placeholder="Email">
+          <input type="password" name="password" class="text phone regis" placeholder="Password">
+          <input type="password" name="confirm_password" class="text phone regis2 regis-mar" placeholder="Confirm Password">
+          <input type="text" name="direccion" class="text phone regis" placeholder="Dirección y Localidad">
+          <input type="text" name="telefono" class="text phone regis" placeholder="Telefono">
+      
+          <div class="row">
+            <div class="col-lg-12">
+              <label class="register">I accept all the term and conditions,
+                including privacy policy
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="col-lg-12 ph-btn">
+              <button class="abs-reflect">
+                  Registrarse 
+               </button>
+              </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <% include ../partials/_footer %>

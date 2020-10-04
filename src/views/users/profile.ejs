@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dr. Lamp || Tienda Online</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/assets/packages/nice-select/nice-select.css">
+    <link rel="stylesheet" href="/dist/assets/packages/animate/animate.css">
+
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/o2system-venus-ui@1.1.0/dist/venus-ui.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="/dist/assets/css/theme.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+
+
+</head>
+
+
+<body>
+    
+
+    <main class="main">
+        <div class="container-fluid">
+            <div class="breadcrumb-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-wrap">
+                                <nav aria-label="breadcrumb">
+                                    <ul class="breadcrumb" >
+                                        <li class="breadcrumb-item">
+                                            <a href="/">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <a href="/shopcart">
+                                                Carro
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">
+                                            <a href="#">
+                                                Perfil
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section list-products">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="myaccount-page-wrapper">
+                                <!-- My Account Tab Menu Start -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4">
+                                        <div class="myaccount-tab-menu nav" role="tablist" >
+                                            <a href="#dashboard" class="active" data-toggle="tab">
+                                                <i class="fas fa-tachometer-alt" ></i>
+                                                Inicio
+                                            </a>
+                                            <a href="#compras" data-toggle="tab">
+                                                    <i class="fa fa-credit-card"></i> 
+                                                Mis compras
+                                            </a>
+                                            
+                                            <a href="#address-edit" data-toggle="tab">
+                                                <i class="fa fa-map-marker-alt"></i> 
+                                                Mis datos 
+                                            </a>
+
+                                            <a href="#payment-method" data-toggle="tab">
+                                                <i class="fa fa-credit-card"></i> 
+                                                Completar mis datos 
+                                            </a>
+                                            
+                                            <a href="#account-info" data-toggle="tab">
+                                                <i class="fa fa-user"></i> 
+                                                Cambiar contraseña
+                                            </a>
+                                            <a href="/" >   
+                                                Seguir comprando
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- My Account Tab Menu End -->
+                            
+                                    <!-- My Account Tab Content Start -->
+                                    <div class="col-lg-9 col-md-8">
+                                        <div class="tab-content" id="myaccountContent">
+
+
+
+
+                                            <!-- Single Tab Content Start -->
+                                            <div class="tab-pane fade show active" id="dashboard" role="tabpanel">
+                                                    <div class="myaccount-content">
+                                                        <h3>Tu cuenta</h3>
+                                                        <div class="welcome">
+                                                            <p>Hola, <strong><%= user.name %></strong> 
+                                                        </div>
+                                                        <p class="mb-0">Desde esta cuenta usted podrá modificar sus datos personales, chequear si sus pedidos fueron aprobados,
+                                                            y ver su historial de compras.</p>
+                                                    </div>                                                            
+    
+                                                </div>
+                                                <!-- Single Tab Content End -->
+
+
+
+
+                                             <!-- Single Tab Content Start -->
+                                            <div class="tab-pane fade  " id="compras" role="tabpanel">
+                                                    <div class="myaccount-content">
+                                                            <h3>Mis compras</h3>
+                                                            <div class="myaccount-table table-responsive text-center">
+                                                                    <% orders.forEach(function (order) { %>
+        
+                                                                <table class="table table-bordered">
+                                                                    <thead class="thead-light">
+                                                                        <tr>
+                                                                            <th>Order</th>
+                                                                            <th>Producto</th>
+                                                                            <th>Cantidad</th>
+                                                                            <th>Precio</th>
+                                                                            <th><p class="<%= order.status ? 'btn btn-success' : 'btn btn-dark'%>"
+                                                                                    href="/order/turn/<%= order.id %>"> <i class="fa fa-truck" aria-hidden="true"></i> </p></th>
+                                                                        </tr>
+                                                                    </thead>
+        
+                                                                        
+                                                                    <tbody>
+                                                                        <tr>
+                                                                                <% order.items.forEach(function (item) { %>
+                                                                            <td><%= item.item.total %></td>
+                                                                            <td><%= item.item.title %></td>
+                                                                            <td><%= item.qty %></td>
+                                                                            <td><%= item.price %></td>
+        
+                                                                                      
+        
+                                                                        </tr>
+                                                                   
+                                                                       
+        
+                                                                    </tbody>
+                                                                    <% }) %>
+                                                                    <td>Total: $<%= order.total %></td>
+                                                                    <td><strong>Fecha</strong>: <%= order.createdAt.toLocaleDateString() %></td>
+                                                                    <% }) %>  
+                                                                </table>
+        
+        
+                                                                <div class="col-12">
+                                                                        <div class="row">
+                                                                              <!-- pagination -->
+                                                                              <% if(pages > 0) { %> <!-- show pagination if there is pages -->
+                                                                                <nav  class="mx-auto" style="margin-bottom: 50px">
+                                                                                  <ul class="pagination">
+                                                                                    <!-- FIRST ITEM -->
+                                                                                    <% if(current == 1) { %>
+                                                                                      <li class="page-item disabled">
+                                                                                        <a class="page-link" href="#">First</a>
+                                                                                      </li>
+                                                                                    <% } else { %>
+                                                                                      <li class="page-item">
+                                                                                        <a class="page-link" href="/perfil/1">First</a>
+                                                                                      </li>
+                                                                                    <% } %>
+                                                                                    <!-- ITEMS  -->
+                                                                                    <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                                                                                    <% if(i !== 1) { %>
+                                                                                      <li class="page-item disabled">
+                                                                                        <a class="page-link" href="#">...</a>
+                                                                                      </li>
+                                                                                    <% } %>
+                                                                                    <% for(; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                                                                                      <% if(i == current) { %>
+                                                                                        <li class="page-item active">
+                                                                                          <a class="page-link" href="<%= i %>">
+                                                                                            <%= i %>
+                                                                                          </a>
+                                                                                        </li>
+                                                                                      <% } else { %>
+                                                                                        <li class="page-item">
+                                                                                          <a class="page-link" href="/perfil/<%= i %>">
+                                                                                            <%= i %>
+                                                                                          </a>
+                                                                                        </li>
+                                                                                      <% } %>
+                                                                                      <% if (i == Number(current) + 4 && i < pages) { %>
+                                                                                         <li class="page-item disabled">
+                                                                                           <a class="page-link" href="#">...</a>
+                                                                                         </li>
+                                                                                      <% } %>
+                                                                                    <% } %>
+                                                                                    <!-- LAST ITEM -->
+                                                                                    <% if(current == pages) { %>
+                                                                                      <li class="page-item disabled">
+                                                                                        <a class="page-link" href="#">
+                                                                                          Last
+                                                                                        </a>
+                                                                                      </li>
+                                                                                    <% } else { %>
+                                                                                      <li class="page-item">
+                                                                                        <a class="page-link" href="/perfil/<%= pages %>">
+                                                                                          Last
+                                                                                        </a>
+                                                                                      </li>
+                                                                                    <% } %>
+                                                                                  </ul>
+                                                                                </nav>
+                                                                              <% } %>
+                                                                            </div>
+                                                                          </div>
+                                                            </div>
+                                                        </div>
+    
+    
+    
+    
+                                                </div>
+                                                <!-- Single Tab Content End -->
+
+
+
+
+                            
+                                            
+
+
+                            
+                                            <!-- Single Tab Content Start -->
+                                            <div class="tab-pane fade" id="download" role="tabpanel">
+                                                <div class="myaccount-content">
+                                                    <h3>Downloads</h3>
+                                                    <div class="myaccount-table table-responsive text-center">
+                                                        <table class="table table-bordered">
+                                                            <thead class="thead-light">
+                                                                <tr>
+                                                                    <th>Product</th>
+                                                                    <th>Date</th>
+                                                                    <th>Expire</th>
+                                                                    <th>Download</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Haven - Free Real Estate PSD Template</td>
+                                                                    <td>Aug 22, 2018</td>
+                                                                    <td>Yes</td>
+                                                                    <td><a href="#" class="check-btn square-btn "><i class="fa fa-cloud-download"></i>
+                                                                            Download File</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>HasTech - Profolio Business Template</td>
+                                                                    <td>Sep 12, 2018</td>
+                                                                    <td>Never</td>
+                                                                    <td><a href="#" class="check-btn square-btn "><i class="fa fa-cloud-download"></i>
+                                                                            Download File</a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Single Tab Content End -->
+
+
+
+
+                            
+                                            <!-- Single Tab Content Start -->
+                                            <div class="tab-pane fade" id="payment-method" role="tabpanel">
+                                                    <div class="myaccount-content">
+                                                        <h3>Completar mis datos</h3>
+                                                        <div class="account-details-form">
+                                                            <form action="/passwordReset" method="POST">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6">
+                                                                        <div class="single-input-item">
+                                                                            <label for="first-name" class="required">First Name</label>
+                                                                            <input type="text" id="first-name" placeholder="First Name" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <div class="single-input-item">
+                                                                            <label for="last-name" class="required">Last Name</label>
+                                                                            <input type="text" id="last-name" placeholder="Last Name" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="single-input-item">
+                                                                    <label for="display-name" class="required">Contraseña</label>
+                                                                    <input type="password" name="resetPassword"  id="display-name" placeholder="Display Name" />
+                                                                </div>
+                                                                <div class="single-input-item">
+                                                                    <label for="email" class="required">Confirmar contraseña </label>
+                                                                    <input type="password" name="repeatresetPassword"id="email" placeholder="Email Address" />
+                                                                </div>
+                                                                <fieldset>
+                                                                    <legend>Password change</legend>
+                                                                    <div class="single-input-item">
+                                                                        <label for="current-pwd" class="required">Current Password</label>
+                                                                        <input type="password" id="current-pwd" placeholder="Current Password" />
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">
+                                                                            <div class="single-input-item">
+                                                                                <label for="new-pwd" class="required">New Password</label>
+                                                                                <input type="password" id="new-pwd" placeholder="New Password" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <div class="single-input-item">
+                                                                                <label for="confirm-pwd" class="required">Confirm Password</label>
+                                                                                <input type="password" id="confirm-pwd" placeholder="Confirm Password" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </fieldset>
+                                                                <div class="single-input-item">
+                                                                    <button class="check-btn square-btn ">Save Changes</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- Single Tab Content End -->
+
+
+
+
+
+                            
+                                            <!-- Single Tab Content Start -->
+                                            <div class="tab-pane fade" id="address-edit" role="tabpanel">
+                                                <div class="myaccount-content">
+                                                    <h3>Mis datos</h3>
+                                                    <address>
+                                                        <p><strong><%= user.name %></strong></p>
+                                                        <p><%= user.direccion %> <br>
+                                                            Bandung, Indonesia 80412</p>
+                                                        <p>Mobile: <%= user.telefono %></p>
+                                                    </address>
+                                                    
+                                                </div>
+                                            </div>
+                                            <!-- Single Tab Content End -->
+
+
+
+                            
+                                            <!-- Single Tab Content Start -->
+                                            <div class="tab-pane fade" id="account-info" role="tabpanel">
+                                                <div class="myaccount-content">
+                                                    <h3>Cambiar contraseña</h3>
+                                                    <div class="account-details-form">
+                                                        <form action="/passwordReset" method="POST">
+                                                            <div class="row">
+                                                              
+                                                            </div>
+                                                            <div class="single-input-item">
+                                                                <label for="display-name" class="required">Contraseña</label>
+                                                                <input type="password" name="resetPassword"  id="display-name" placeholder="Display Name" />
+                                                            </div>
+                                                            <div class="single-input-item">
+                                                                <label for="email" class="required">Confirmar contraseña </label>
+                                                                <input type="password" name="repeatresetPassword"id="email" placeholder="Email Address" />
+                                                            </div>
+                                                           
+                                                            <div class="single-input-item">
+                                                                <button class="check-btn square-btn ">Guardar</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- Single Tab Content End -->
+
+
+
+
+                                        </div>
+                                    </div> <!-- My Account Tab Content End -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="newsletter-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 col-md-6">
+                        <div class="newsletter-inner">
+                            <div class="newsletter-title">
+                                <h3>newsletter signup</h3>
+                            </div>
+                            <div class="newsletter-box">
+                                <form id="mc-form">
+                                    <input type="email" id="mc-email" autocomplete="off" placeholder="Your Email address">
+                                    <button class="newsletter-btn" id="mc-submit">
+                                        <i class="far fa-envelope"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="mailchimp-alerts">
+                            <div class="mailchimp-submitting"></div>
+                            <div class="mailchimp-success"></div>
+                            <div class="mailchimp-error"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-md-6 ml-auto">
+                        <div class="social-share-area">
+                            <h3>Follow Us</h3>
+                            <div class="social-icon">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-rss"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="widget-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="footer-widget">
+                            <div class="footer-widget-title">
+                                <h3>shipping and delivery</h3>
+                            </div>
+                            <div class="footer-widget-body">
+                                <p>Here you can read some details about a nifty little lifecycle of your order's
+                                    journey from
+                                    the time you place your order to your new treasures arriving at your doorstep.</p>
+                            </div>
+                            <div class="footer-widget-title mt-4">
+                                <h3>payment method</h3>
+                            </div>
+                            <div class="footer-widget-body">
+                                <p>It is equally important to choose the solution which offers a specific selection of
+                                    credit
+                                    cards. We take Visa & MasterCard as they are widely used by cyber customers.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6 col-6">
+                        <div class="footer-widget">
+                            <div class="footer-widget-title">
+                                <h3>useful link</h3>
+                            </div>
+                            <div class="footer-widget-body">
+                                <ul class="useful-link">
+                                    <li><a href="list.html">Our Products</a></li>
+                                    <li><a href="account.html">Account</a></li>
+                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                    <li><a href="faq.html">Faq</a></li>
+                                    <li><a href="about-us.html">About us</a></li>
+                                    <li><a href="contact-us.html">contact us</a></li>
+                                    <li><a href="login-register.html">login/signup</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6 col-6">
+                        <div class="footer-widget">
+                            <div class="footer-widget-title">
+                                <h3>our company</h3>
+                            </div>
+                            <div class="footer-widget-body">
+                                <ul class="useful-link">
+                                    <li><a href="list.html">Our Products</a></li>
+                                    <li><a href="account.html">Account</a></li>
+                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                    <li><a href="faq.html">Faq</a></li>
+                                    <li><a href="about-us.html">About us</a></li>
+                                    <li><a href="contact-us.html">contact us</a></li>
+                                    <li><a href="login-register.html">login/signup</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="footer-widget profile-company">
+                            <div class="footer-widget-title pb-3">
+                                <div class="footer-logo">
+                                    <a href="index.html">
+                                        <img src="dist/assets/img/logo/logo-small.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="footer-widget-body">
+                                <ul class="address-box">
+                                    <li>
+                                        <span>ADDRESS:</span>
+                                        <p>Taman Kopo Indah 5, Sommerville 7 38<br>
+                                            Bandung, Indonesia</p>
+                                    </li>
+                                    <li>
+                                        <span>call us now:</span>
+                                        <p>+628192891821</p>
+                                    </li>
+                                    <li>
+                                        <span>email:</span>
+                                        <p>email@yourdomain.com</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <div class="copyright-text">
+                            <p>&copy; copyright <a href="index.html">Elvira Fash</a>. All Rights Reserved</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ml-auto order-1 order-md-2">
+                        <div class="footer-payment">
+                            <img src="dist/assets/img/payment.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+ 
+
+    <!-- Start Search Popup -->
+    <div class="search-box">
+        <form class="minisearch" action="#">
+            <div class="search-area">
+                <input type="text" placeholder="Search Our Catalog">
+                <div class="action">
+                    <a href="#">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </div>
+            </div>
+        </form>
+        <div class="close-btn">
+            <span>close</span>
+        </div>
+    </div>
+    <!-- End Search Popup -->
+
+    <!-- Scroll to top start -->
+    <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- Scroll to Top End -->
+
+    <script type="text/javascript" src="/dist/venus-ui.js"></script>
+    <script type="text/javascript" src="/dist/assets/packages/owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="/dist/assets/packages/nice-select/nice-select.js"></script>
+    <script type="text/javascript" src="/dist/assets/js/theme.js"></script>
+    <script>
+            <% if (flash.success && flash.success.length > 0) {%>
+                 new Noty({
+                     theme: 'relax',
+                     text: "<%= flash.success %>",
+                     type: 'success',
+                     layout: 'topRight',
+                     timeout: 2000
+                     
+                 }).show();    
+             <%} %>
+        
+             <% if (flash.error && flash.error.length > 0) {%>
+                 new Noty({
+                     theme: 'relax',
+                     text: "<%= flash.error %>",
+                     type: 'error',
+                     layout: 'topRight',
+                     timeout: 2000
+                     
+                 }).show();    
+             <%} %>
+        
+             
+         </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

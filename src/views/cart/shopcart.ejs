@@ -1,0 +1,111 @@
+<% include ../partials/_header %>
+
+
+<!--================ Breadcump Part HTML Start ======================-->
+
+<section id="breadcumb" style="background:url(images/grid-view/banner.jpg) no-repeat center;background-size:cover;">
+    <div class="bnr-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center p-0">
+                    <h1>Carro de la compra</h1>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-angle-right"></i></li>
+                        <li><a href="shopping-cart.html">Confirmar compra</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--================ Breadcump Part HTML End ======================-->
+
+
+<!--================ Shoping Cart Part HTML Start ======================-->
+
+<section id="shoping-cart">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 table-area">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Eliminar</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                            <% if(products) { %>
+                                <% for(var i = 0; i < products.length; i++) { %>
+                        <tr>
+                            <td>
+                                <a class="trash" href="/remove/<%= products[i].item._id %>"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                          
+                            <td class="cart-content">
+                                <div class="cart-item">
+                                    <img src="<%= products[i].item.image %>" class="img-fluid" alt="product1">
+                                </div>
+                                <div class="content">
+                                    <h3><%= products[i].item.title %></h3>
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                    </ul>
+                                    <h3 class="weight"></h3>
+                                </div>
+                            </td>
+                            <td>$ <%= products[i].item.price %></td>
+                            <td>
+                                <a href="/reduce/<%= products[i].item._id %>" class="btn btn-black mx-1"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                               <%= products[i].qty %>
+                                <a href="/sumar/<%= products[i].item._id %>" class="btn btn-black mx-1"><i class="fa fa-chevron-up" aria-hidden="true"></i></a> 
+                            </td>
+                            <td>$ <%= products[i].price %></td>
+           
+                        </tr>
+                        
+                        <tr>
+                            <% } %>   
+                                       
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-3 cupon-area ph-btn">
+                <h4>Detalles</h4>
+               
+                <h4 class="cart-total">Total</h4>
+                <ul>
+              
+                    <li>Envío <span>-</span></li>
+                    <li>Total <span>$ <%= totalPrice %></span></li>
+                </ul>
+                
+                            <% } else { %>                    
+    
+                                <% } %> 
+                <div class="noor2">
+                    <a href="/prepagar" class="abs-reflect">Iniciar Compra</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--================ Shoping Cart Part HTML End ======================-->
+
+
+
+
+
+<% include ../partials/_footer %>      

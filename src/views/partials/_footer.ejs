@@ -1,0 +1,60 @@
+
+<!--================ Footer Part HTML Start =============-->
+
+<footer>
+   
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-7">
+                    <p>Copyright &copy; 2019. All rights reserved by <a href="#">Themesitem</a></p>
+                </div>
+                <div class="col-lg-6 col-md-5 footer-bottom-card">
+                    <a href="#"><img src="/images/mastercard.png" class="img-fluid" alt="Payment Image"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--================ Footer Part HTML End =============-->
+
+<script src="/js/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/slick.min.js"></script>
+<script src="/js/venobox.min.js"></script>
+<script src="/js/range.js"></script>
+<script src="/js/custom.js"></script>
+
+<script src="/js/InputSpinner.js"></script>
+<script src="/js/xzoom.min.js"></script>
+<script src="/js/xoom-setup.js"></script>
+<script>
+    <% if (flash.success && flash.success.length > 0) {%>
+         new Noty({
+             theme: 'relax',
+             text: "<%= flash.success %>",
+             type: 'success',
+             layout: 'topRight',
+             timeout: 2000
+             
+         }).show();    
+     <%} %>
+
+     <% if (flash.error && flash.error.length > 0) {%>
+         new Noty({
+             theme: 'relax',
+             text: "<%= flash.error %>",
+             type: 'error',
+             layout: 'topRight',
+             timeout: 2000
+             
+         }).show();    
+     <%} %>
+
+     
+ </script>
+
+</body>
+
+</html>

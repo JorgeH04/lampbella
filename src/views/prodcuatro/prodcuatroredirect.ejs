@@ -1,0 +1,48 @@
+<% include ../partials/_header %>
+
+
+
+<div class="container mt-5 p-4">
+        <div class="row">
+
+           <div class= "col-md-6 mt-5">
+                <div class="card text-center mx-auto" >
+                     <div class="card-body">
+                          <img src="<%= prodcuatro.imagePath %>" class="img-fluid">
+                     </div>        
+                 </div>
+            </div>
+            <div class= "col-md-6 mt-5">
+     
+                <div class="card text-center mx-auto" >
+                     <div class="card-body">
+                         <h1>Talles y colores en stock:</h1>
+                           <h5><%= prodcuatro.tallestock %></h2>
+                           <h5><%= prodcuatro.colorstock %></h2>
+                           <br>
+                          <a href="/prodcuatro/tallecolor/<%= prodcuatro.id %>"class="btn btn-danger pull-right" role="button">Elija su talle y color</a>
+     
+                     </div>     
+                 </div>
+                <div class="card text-center mx-auto" >
+                     <div class="card-body">
+                         <h2><%= prodcuatro.product %></h2>
+                         <h2>$<%= prodcuatro.price %></h2>
+                     </div>  
+
+                     <div class="card-body">
+                          <a href="/addtocardprodcuatro/<%= prodcuatro.id %>" class="btn btn-success pull-right" role="button">Agregar al carro</a>
+                     </div>       
+                 </div>
+            </div>
+     
+         </div>
+     </div>
+     
+
+
+
+
+
+
+<% include ../partials/_footer %>

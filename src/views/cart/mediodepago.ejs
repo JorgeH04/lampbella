@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Neshoes || Tienda Online</title>
+    <link rel='stylesheet' href='/asset/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='/asset/css/owl.carousel.min.css'>
+    <link rel='stylesheet' href='/asset/css/animated.css'>
+    <link rel='stylesheet' href='/asset/css/font-awesome.css'>
+    <link rel='stylesheet' href='/asset/css/ui.css'>
+    <link rel='stylesheet' href='/asset/css/jquery.mmenu.all.css'>
+    <link rel='stylesheet' href='/asset/css/flaticon.css'>
+    <link rel='stylesheet' href='/asset/css/style.css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i;Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <link rel="stylesheet" href="/csss/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+</head>
+<body class="body-color-blue" data-main-color="#0b2076">
+    
+
+
+    <header class="header header-style5">
+        <div class="header-mid">
+            <div class="container">
+                <div class="header-mid-left">
+                    <span class="register-or-login">Seleccione su medio de pago <a href="#"></a></span>
+                </div>
+               
+            </div>
+        </div>
+        <div class="header-bottom">
+             </div>
+        </div>
+    </header>
+
+
+
+
+
+<!-- End .banner -->
+<div class="main-content container mt-5">
+    <div class="row">
+        <div class="col-md-9">
+            <p class="title-left">Elegir el Medio de Pago</p>
+            <div class="check-1 checkout-box">
+                <div class="check-out-click"><span>1</span>Pagar por Mercado Pago</div>
+                <div class="check-method-content checkout-toggle">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="method-content-left">
+                                <div class="color-333">Ya estas en el último paso</div>
+                                <form action="/checkout" method="post">   
+
+                                <div class="method-content-left-bottom">
+                                    <p>Ahora te redireccionaremos al sitio seguro de MercadoPago 
+                                        para que finalices tu compra.</p>
+                                  
+                                    <p>Nos pondremos en contacto contigo en la brevedad</p>
+                                    <p>Muchas gracias!</p>
+
+                                    
+                                </div>
+                                <button class="button orange">Continuar</button>
+                            </form>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                                <img src="/assex/images/zz.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="check-2 checkout-box">
+                <div class="check-out-click"><span>2</span>Pagar por Transferencia Bancaria </div>
+                <div class="check-method-content checkout-toggle" style="display: none">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="method-content-left">
+                                <div class="color-333">Checkout as a Guest or Register</div>
+                                <div class="method-content-left-bottom">
+                                    <p>Cuando termines la compra, vas a ver la información de pago.</p>
+                                   
+                                    <p>Register and save time!</p>
+                                    <p>Register with us for future convenience:</p>
+                                    <p>Fast and easy check out</p>
+                                    <p>Easy access to your order history and status</p>
+                                </div>
+                                <a class="button orange" href="#">Continue</a>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                                <img src="/assex/images/banking.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="check-5 checkout-box">
+                <div class="check-out-click"><span>3</span>Pagar en el negocio</div>
+                <div class="check-method-content checkout-toggle" style="display: none">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="method-content-left">
+                                <div class="color-333">Checkout as a Guest or Register</div>
+                                <form action="/paypalcheckout" method="post">   
+                                <div class="method-content-left-bottom">
+                                    <p>Register with us for future convenience:</p>
+                                   
+                                    <p>Register and save time!</p>
+                                    <p>Register with us for future convenience:</p>
+                                    <p>Fast and easy check out</p>
+                                    <p>Easy access to your order history and status</p>
+                                </div>
+                                <button class="button orange"  >Continue</button>
+                            </form>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="col-md-5">
+                                <img src="/assex/images/paypalcheckout.png" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-3">
+               
+            <p class="check-title-right">Su compra es por un total de:</p>
+           
+            <div class="check-button">
+                    <% if(products) { %>
+                        <% for(var i = 0; i < products.length; i++) { %>
+                    <% } %>    
+                 
+                <h1 class="button button-white" > <%= total %></h1>
+                
+                <% } else { %>                    
+
+                    <% } %>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<!--end footer-->
+<script type="text/javascript" src="/jss/jquery.min.js"></script>
+<script type="text/javascript" src="/jss/bootstrap.min.js"></script>
+<script type="text/javascript" src="/jss/script.js"></script>
+
+<script type='text/javascript' src='/asset/js/jquery.min.js'></script>
+<script type='text/javascript' src='/asset/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/asset/js/wow.min.js'></script>
+<script type='text/javascript' src='/asset/js/owl.carousel.min.js'></script>
+<script type='text/javascript' src='/asset/js/jquery.appear.min.js'></script>
+<script type='text/javascript' src='/asset/js/jquery.countTo.js'></script>
+<script type='text/javascript' src='/asset/js/ui.js'></script>
+<script type='text/javascript' src='/asset/js/jquery.bxslider.min.js'></script>
+<script type='text/javascript' src='/asset/js/jquery.mmenu.all.min.js'></script>
+<script type='text/javascript' src='/asset/js/chosen.jquery.min.js'></script>
+<script type='text/javascript' src='/asset/js/jquery.countdown.js'></script>
+<script type='text/javascript' src='/asset/js/frontend.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$( "#form" ).submit(function(event) {
+			event.preventDefault();
+			$.ajax({
+				type: 'POST',
+				url: '/users/signup',
+				data: $('#form').serialize(),
+				dataType: "json",
+				text: function(response){
+					//alert("a");
+					//console.log(response.Success);
+					$('#form')[0].reset();
+
+					document.getElementById("check").innerHTML=response.Success;
+						 //ADD THIS CODE
+						 setTimeout(function(){
+							 document.getElementById("check").innerHTML="";
+						 },3000);
+						 if (response.Success=="Success!") {
+							 document.getElementById("aa").click();
+						 };
+					 },
+					 error: function() {
+					 }
+				 })
+		});
+
+	});
+</script>
+
+
+</body>
+</html>

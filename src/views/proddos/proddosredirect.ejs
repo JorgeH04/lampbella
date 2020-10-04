@@ -1,0 +1,283 @@
+<% include ../partials/_header %>
+
+
+
+	<!--================ Breadcumb Part HTML Start ======================-->
+
+	<section id="breadcumb" style="background:url(images/grid-view/banner.jpg) no-repeat center;background-size:cover;">
+		<div class="bnr-overlay">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center p-0">
+						<h1>Product Details</h1>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><i class="fas fa-angle-right"></i></li>
+							<li><a href="product-details.html">Product Details</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--================ Breadcumb Part HTML End ======================-->
+
+	<!--================ All Product Part HTML Start ======================-->
+
+	<section id="all-product" class="product-sagor">
+		<div class="container list-view">
+			<div class="row">
+				<div class="col-12">
+					<div class="row">
+						<div class="col-lg-3 col-md-3">
+							<div class="row">
+								<div class="col-12 catagory">
+									<h3>Category</h3>
+									<ul>
+										<li><a href="#">Skin care</a></li>
+										<li><a href="#">Stone Massage</a></li>
+										<li><a href="#">Hot Water Massage</a></li>
+										<li><a href="#">Pedicure</a></li>
+										<li><a href="#">Hair Care Solution</a></li>
+										<li><a href="#">Nail Care Solution</a></li>
+									</ul>
+								</div>
+								
+								<div class="col-12">
+									<div class="row discount-slide">
+										<div class="col-12">
+											<img src="images/grid-view/discount-banner-1.jpg" class="img-fluid w-100"
+												alt="Discount Image">
+										</div>
+										<div class="col-12">
+											<img src="images/grid-view/discount-banner-1.jpg" class="img-fluid w-100"
+												alt="Discount Image">
+										</div>
+										<div class="col-12">
+											<img src="images/grid-view/discount-banner-1.jpg" class="img-fluid w-100"
+												alt="Discount Image">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-9  col-md-9 product-details order-md-1">
+							<div class="row ">
+								<div class="col-12 xoom_part">
+									<div class="row">
+										<div class="col-lg-5">
+											<div class="displayed">
+												<img class="xzoom img-fluid" id="xzoom-default"
+													src="<%= proddos.image %>" xoriginal="<%= proddos.image %>"
+													alt="Zoom Photo" />
+											</div>
+											<div class="thumnail_all">
+												<ul class="slide_item">
+													<li>
+														<a href="<%= proddos.image %>">
+															<img class="xzoom-gallery" width="80"
+																src="<%= proddos.image %>"
+																xpreview="<%= proddos.image %>" alt="Zoom Slide">
+														</a>
+													</li>
+
+													<li>
+														<a href="<%= proddos.imagedos %>">
+															<img class="xzoom-gallery" width="80"
+																src="<%= proddos.imagedos %>" alt="Zoom gallery">
+														</a>
+													</li>
+
+													<li>
+														<a href="<%= proddos.imagetres %>">
+															<img class="xzoom-gallery" width="80"
+																src="<%= proddos.imagetres %>" alt="Zoom gallery">
+														</a>
+													</li>
+
+													<li>
+														<a href="<%= proddos.image %>">
+															<img class="xzoom-gallery" width="80"
+																src="<%= proddos.image %>" alt="Zoom gallery">
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-lg-7 product-brief">
+											<h3><%= proddos.title %></h3>
+											<ul>
+												<li><i class="fas fa-star"></i></li>
+												<li><i class="fas fa-star"></i></li>
+												<li><i class="fas fa-star"></i></li>
+												<li><i class="fas fa-star"></i></li>
+												<li><i class="fas fa-star"></i></li>
+											</ul>
+											<h4>Precio: $<%= proddos.price %></h4>
+											<h5>Disponibilidad: <span><%= proddos.enstock %></span></h5>
+											<p><%= proddos.description %>.</p>
+											
+											<ul class="add-to-cart icon-btn">
+												
+												<li><a class="abs-reflect carts" href="/addtocardproddos/<%= proddos.id %>">
+													Agregar
+												</a></li>
+												<li><a class="abs-reflect" href="#"><i class="fas fa-eye"></i></a></li>
+											</ul>
+											
+										</div>
+									</div>
+								</div>
+								<div class="col-12  tab-part">
+									<div class="row">
+										<div class="col-12">
+											<ul class="nav nav-tabs" id="myTab" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active pl-0" id="home-tab" data-toggle="tab"
+														href="#home" role="tab" aria-controls="home"
+														aria-selected="true">Description </a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" id="profile-tab" data-toggle="tab"
+														href="#profile" role="tab" aria-controls="profile"
+														aria-selected="false">Reviews</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" id="contact-tab" data-toggle="tab"
+														href="#contact2" role="tab" aria-controls="contact"
+														aria-selected="false">Terms &amp; Condition</a>
+												</li>
+											</ul>
+										</div>
+										<div class="col-12">
+											<div class="tab-content" id="myTabContent">
+												<div class="tab-pane fade show active" id="home" role="tabpanel"
+													aria-labelledby="home-tab">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+														eiusmod tempor incididunt ut labore et
+														dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+														exercitation ullamco laboris nisi ut aliquip
+														ex ea commodo consequat. Duis aute irure dolor in reprerit in
+														voluptate velit esse cillum dolore eu
+														fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+														proident, sunt in culpa qui officia deserunt
+														mollit anim id est laborum. Sed ut perspiciatis unde omnis.</p>
+													<p>iste natus error sit voluptatem accusantium doloremque
+														laudantium, totam rem aperiam, eaque ipsa quae
+														ab illo inventore veritatis et quasi architecto beatae vitae
+														dicta sunt explicabo. Nemo enim ipsam
+														voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
+														quia consequuntur magni dolores eos qui
+														ratione voluptatem sequi nesciunt.</p>
+												</div>
+												<div class="tab-pane fade" id="profile" role="tabpanel"
+													aria-labelledby="profile-tab">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+														Consequuntur nihil earum quam maxime itaque,
+														magni quasi omnis exercitationem officiis. Tenetur dolores,
+														laborum nam maxime itaque facere expedita cum
+														beatae modi cumque consequatur minima necessitatibus natus nisi
+														eos deleniti nesciunt nihil temporibus
+														odit earum? Dignissimos impedit reiciendis rerum sint aut
+														deleniti hic ullam quisquam adipisci, autem in
+														ipsam exercitationem quae cum assumenda cumque corrupti
+														nesciunt. Consequatur corporis dignissimos,
+														delectus eveniet, ut debitis modi quas veniam maiores vel
+														laborum unde ipsum aliquid, dolorum, iste
+														quaerat rem optio autem dicta facilis. Amet, magnam. Veniam,
+														aperiam reprehenderit saepe asperiores quasi
+														dolores officiis labore consequuntur provident tempore doloribus
+														praesentium eum hic sed tempora
+														voluptatum voluptatem veritatis mollitia voluptate cum laborum
+														suscipit perspiciatis temporibus magni.
+														Expedita inventore assumenda a quam. Repudiandae error quos
+														doloribus nostrum modi, voluptates totam,
+														placeat qui. Deleniti, laborum consequuntur impedit adipisci
+														aspernatur pariatur iusto perspiciatis autem
+														dolorum. Suscipit fugiat a, vel earum voluptas. Est laudantium,
+														temporibus repellat fugit error veritatis
+														voluptatum ab facere doloremque minima. Suscipit sapiente quidem
+														voluptates animi. Dolore sequi rerum
+														quisquam, error iure eligendi, ipsa tempora debitis hic libero
+														ad amet modi velit? Non cum maiores
+														impedit consectetur, ducimus officiis blanditiis minima atque
+														nobis fugit alias unde, fugiat odit.</p>
+												</div>
+												<div class="tab-pane fade" id="contact2" role="tabpanel"
+													aria-labelledby="contact-tab">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque
+														error dolorem, commodi architecto
+														officia esse unde tenetur. Porro, modi. Expedita, distinctio?
+														Omnis error corrupti eum, molestias
+														tenetur? Saepe quo et quos libero facere qui voluptatum, iure,
+														commodi blanditiis eligendi praesentium
+														voluptatem sequi provident sint? Quia corporis aut
+														necessitatibus aliquid sit veritatis. Quaerat ex cum
+														eaque, modi ipsa cumque! Repellat, minus.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12  related-product">
+									<div class="row">
+										<div class="col-12 text-center">
+											<h2>Related Products</h2>
+										</div>
+										<div class="col-12">
+											<div class="row">
+													<% ofertauno.forEach(function (ofertaun) { %>
+												<div class="col-lg-4 col-sm-6 text-center">
+													<figure>
+														<div class="product-item">
+															<img src="<%= ofertaun.image %>" class="img-fluid"
+																alt="Product Image">
+														</div>
+														<figcaption>
+															<h4 class="title">Bella Special Cream</h4>
+															<ul class="review">
+																<li><i class="fas fa-star"></i></li>
+																<li><i class="fas fa-star"></i></li>
+																<li><i class="fas fa-star"></i></li>
+																<li><i class="fas fa-star"></i></li>
+																<li><i class="fas fa-star"></i></li>
+															</ul>
+															<h4>Price: $9.99</h4>
+															<ul class="cart-list icon-btn">
+																<li><a class="abs-reflect" href="#"><i
+																			class="fas fa-heart"></i></a></li>
+																<li><a class="abs-reflect" href="#"><i
+																			class="fas fa-cart-plus"></i></a></li>
+																<li><a class="abs-reflect" href="#"><i
+																			class="fas fa-eye"></i></a></li>
+															</ul>
+														</figcaption>
+													</figure>
+												</div>
+												<% }) %>
+												
+											</div>
+										</div>
+										<div class="col-lg-12 text-center ph-btn">
+											<a href="#" class="abs-reflect">Browse All</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!--================ All Product Part HTML End ======================-->
+
+
+
+
+
+
+<% include ../partials/_footer %>

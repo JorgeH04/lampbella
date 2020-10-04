@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Neshoes || Tienda Online</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="dist/assets/packages/nice-select/nice-select.css">
+    <link rel="stylesheet" href="dist/assets/packages/animate/animate.css">
+
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/o2system-venus-ui@1.1.0/dist/venus-ui.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="dist/assets/css/theme.css">
+    <link rel="canonical" href="http://localhost:4000/index.html">
+</head>
+
+
+<body>
+
+
+
+      
+
+
+
+
+
+   
+
+    <main class="main">
+        <div class="container-fluid">
+                <div class="breadcrumb-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="breadcrumb-wrap">
+                                        <nav aria-label="breadcrumb">
+                                            <ul class="breadcrumb">
+                                                <li class="breadcrumb-item">
+                                                    <a href="/">
+                                                        Home
+                                                    </a>
+                                                </li>
+                                                <li class="breadcrumb-item">
+                                                    <a href="/shopcart">
+                                                        Carro
+                                                    </a>
+                                                </li>
+                                                <li class="breadcrumb-item active" aria-current="page">
+                                                    <a href="#" style="color:darkblue">
+                                                        Checkout
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+            <div class="section list-products">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Checkout Login Coupon Accordion Start -->
+                            <div class="checkoutaccordion" id="checkOutAccordion" style="background-color:darkblue">
+                                <div class="card">
+                                        <h3>Ingrese sus datos para completar su proceso de compra y en la brevedad nos estaremos comunicando con usted<span data-toggle="collapse" data-target="#logInaccordion" style=" color:darkblue"></span></h3>
+
+                                    <div id="logInaccordion" class="collapse" data-parent="#checkOutAccordion">
+                                        <div class="card-body">
+
+
+                                            <div class="login-reg-form-wrap mt-3">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="card">
+                                            
+                             
+                                </div>
+                            </div>
+                            <!-- Checkout Login Coupon Accordion End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section list-products pt-0">
+                <div class="container">
+                    <div class="row" id="billing-shipping">
+                        <!-- Checkout Billing Details -->
+                        <div class="col-lg-6">
+                            <div class="checkout-billing-details-wrap">
+                                <h2>Datos de facturación</h2>
+                                <div class="billing-form-wrap">
+                                    <form action="/confirmacion" method="POST">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="single-input-item">
+                                                    <label for="f_name" class="required"> Nombre </label>
+                                                    <input type="text"  name="name"  id="f_name" placeholder= required />
+                                                </div>
+                                            </div>
+                    
+                                            <div class="col-md-6">
+                                                <div class="single-input-item">
+                                                    <label for="l_name" class="required">Apellido</label>
+                                                    <input type="text"  name="surname" id="l_name" placeholder="" required />
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="single-input-item">
+                                            <label for="email" class="required">Dirección </label>
+                                            <input type="text" name="address"  id="email" placeholder="" required />
+                                        </div>
+                    
+                                        <div class="single-input-item">
+                                            <label for="com-name">Localidad</label>
+                                            <input type="text" name="localidad" id="com-name" placeholder="" />
+                                        </div>
+                    
+                    
+                                        <div class="single-input-item">
+                                            <label for="street-address" class="required mt-20">¨Piso (opcional)</label>
+                                            <input type="text" name="piso"  id="street-address" placeholder="" />
+                                        </div>
+                    
+                                        <div class="single-input-item">
+                                            <label for="phone">Teléfono</label>
+                                            <input type="text" name="number" id="phone" placeholder="" required/>
+                                        </div> 
+
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="single-input-item">
+                                                        <label for="f_name" class="required"> Digite el monto total de su compra </label>
+                                                        <input type="text"  name="total"  id="f_name" placeholder= required />
+                                                    </div>
+                                                </div>
+                        
+                                                <div class="col-md-6">
+                                                    <div class="single-input-item">
+                                                            <label for="phone">Envío</label>
+
+                                                            <div>
+                                                                    <select name="envio" class="nice-select" id="country">
+                                                                        <option value="moto">Moto</option>
+                                                                        <option value="uber">UBER</option>
+                                                                        <option value="correo">Correo Argentino</option>
+                                                                        <option value="negocio">Retirar en el negocio</option>
+                                                                    </select>
+                                                                </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                           
+
+                                        
+                                         
+                    
+                                        <div class="single-input-item">
+                                            <label for="ordernote">Comentario relevante</label>
+                                            <textarea  name="nota" id="ordernote" cols="30" rows="3" placeholder="En caso que lo considere necesario, escriba algún comentario o indicación"></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                                <button class="btn btn-primary btn-block" type="submit" style="background-color:darkblue">
+                                                  Continuar
+                                                </button>
+                                         </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                     
+                    
+                        <!-- Order Summary Details -->
+                        <div class="col-lg-6">
+                            <div class="order-summary-details">
+                                <h2>Resumen de compra</h2>
+ 
+                                <div class="order-summary-content mb-sm-4">
+                                    <!-- Order Summary Table -->
+                                    <div class="order-summary-table table-responsive text-center">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Products</th>
+                                                    <th>Total</th>
+                                                    <% if(products) { %>
+                                                      <% for(var i = 0; i < products.length; i++) { %>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a href="single-product.html"><%= i + 1%>) <%= products[i].item.title %> <strong> × <%= products[i].qty %></strong></a></td>
+                                                    <td>$<%= products[i].item.price %></td>
+                                                </tr>
+                                                <% } %>    
+                                            </tbody>
+                                            <tfoot>
+                                               
+                                           
+                                                <tr>
+                                                    <td>Total Amount</td>
+                                                    <td><strong>$<%= total %></strong></td>
+                                                    <% } else { %>                    
+
+                                                      <% } %>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <!-- Order Payment Method -->
+
+                                    <div class="order-payment-method ">
+
+                                        <div class="summary-footer-area">
+                                            <div class="custom-control custom-checkbox mb-14">
+                                                <input type="checkbox" class="custom-control-input" id="terms" required />
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+
+
+    <!-- Start Search Popup -->
+    <div class="search-box">
+        <form class="minisearch" action="#">
+            <div class="search-area">
+                <input type="text" placeholder="Search Our Catalog">
+                <div class="action">
+                    <a href="#">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </div>
+            </div>
+        </form>
+        <div class="close-btn">
+            <span>close</span>
+        </div>
+    </div>
+    <!-- End Search Popup -->
+
+    <!-- Scroll to top start -->
+    <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- Scroll to Top End -->
+
+    <script type="text/javascript" src="dist/venus-ui.js"></script>
+    <script type="text/javascript" src="dist/assets/packages/owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="dist/assets/packages/nice-select/nice-select.js"></script>
+    <script type="text/javascript" src="dist/assets/js/theme.js"></script>
+</body>
+
+</html>

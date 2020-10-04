@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Editar productos</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/assets/packages/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="/dist/assets/packages/owl-carousel/owl.theme.default.css">
+    <link rel="stylesheet" href="/dist/assets/packages/animate/animate.css">
+
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/o2system-venus-ui@1.1.0/dist/venus-ui.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="/dist/assets/css/theme.css">
+    <link rel="canonical" href="http://localhost:4000/index.html">
+</head>
+
+
+<body>
+
+        <a href="/produnoback/1" class="btn btn-primary " type="submit">
+            volver a inicio
+          </a>
+
+
+
+
+
+
+<div class="col-md-4 mx-auto">
+    <div class="card">
+      <div class="card-header">
+        <h3>Edite su producto</h3>
+      </div>
+      <div class="card-body">
+        <form action="/produno/edit/<%= produno._id %>" method="POST">
+          <input type="hidden" name="_method" value="PUT">
+         
+
+          
+          <div class="form-group">
+            <input type="text" name="name" class="form-control" placeholder="name" value="<%= produno.name %>"  autofocus/>
+          </div>
+         <div class="form-group">
+            <input type="text" name="title" class="form-control" placeholder="title" value="<%= produno.title %>" autofocus/>
+          </div>
+          <div class="form-group">
+              <input type="text" name="image" class="form-control" placeholder="imagen 1" value="<%= produno.image %>" autofocus/>
+            </div>
+            <div class="form-group">
+              <input type="text" name="imagedos" class="form-control" placeholder="imagen 2" value="<%= produno.imagedos %>" autofocus/>
+            </div>
+            <div class="form-group">
+              <input type="text" name="imagetres" class="form-control" placeholder="imagen 3" value="<%= produno.imagetres %>" autofocus/>
+            </div>
+                   <div class="form-group">
+              <input type="text" name="description" class="form-control" placeholder="descripcion" value="<%= produno.description %>" autofocus/>
+            </div>
+            <div class="form-group">
+              <input type="text" name="price" class="form-control" placeholder="precio" value="<%= produno.price %>" autofocus/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="oldprice" class="form-control" placeholder="precio anterior" value="<%= produno.oldprice %>" autofocus/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="color" class="form-control" placeholder="color" value="<%= produno.color %>" autofocus/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="colorstock" class="form-control" placeholder="color stock" value="<%= produno.colorstock %>" autofocus/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="enstock" class="form-control" placeholder="en stock?" value="<%= produno.enstock %>" autofocus/>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="talle" class="form-control" placeholder="talle" value="<%= produno.talle %>" autofocus/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="tallestock" class="form-control" placeholder="talle stock" value="<%= produno.tallestock %>" autofocus/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="filtroprice" class="form-control" placeholder="filtro de precio" value="<%= produno.filtroprice %>" autofocus/>
+            </div>
+
+
+
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+</body>
+</html>

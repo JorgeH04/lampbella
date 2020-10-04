@@ -1,0 +1,176 @@
+<% include ../partials/_header %>
+
+
+
+
+
+
+<!--================ Header Part HTML End ======================-->
+
+	<!--================ Breadcumb Part HTML Start ======================-->
+
+	<section id="breadcumb" style="background:url(images/grid-view/banner.jpg) no-repeat center;background-size:cover;">
+		<div class="bnr-overlay">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center p-0">
+						<h1>Product Details</h1>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><i class="fas fa-angle-right"></i></li>
+							<li><a href="product-details.html">Product Details</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--================ Breadcumb Part HTML End ======================-->
+
+	<!--================ All Product Part HTML Start ======================-->
+
+	<section id="all-product" class="product-sagor">
+		<div class="container list-view">
+			<div class="row">
+				<div class="col-12">
+					<div class="row">
+						<div class="col-lg-3 col-md-3">
+							<div class="row">
+								<div class="col-12 catagory">
+									<h3></h3>
+									<ul>
+								
+									</ul>
+								</div>
+								<div class="col-lg-12 price-filter">
+									<h3></h3>
+									
+								</div>
+								<div class="col-lg-12 price-filter">
+									
+								</div>
+								<div class="col-12">
+									
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-9  col-md-9 product-details order-md-1">
+							<div class="row ">
+								<div class="col-12 xoom_part">
+									<div class="row">
+										<div class="col-lg-5">
+											<div class="displayed">
+												<img class="xzoom img-fluid" id="xzoom-default"
+													src="<%= ofertacuatro.image %>" xoriginal="<%= ofertacuatro.image %>"
+													alt="Zoom Photo" />
+											</div>
+											<div class="thumnail_all">
+												<ul class="slide_item">
+                                                        <li>
+                                                                <a href="<%= ofertacuatro.image %>">
+                                                                    <img class="xzoom-gallery" width="80"
+                                                                        src="<%= ofertacuatro.image %>"
+                                                                        xpreview="<%= ofertacuatro.image %>" alt="Zoom Slide">
+                                                                </a>
+                                                            </li>
+
+													<li>
+														<a href="<%= ofertacuatro.imagedos %>">
+															<img class="xzoom-gallery" width="80"
+																src="<%= ofertacuatro.imagedos %>" alt="Zoom gallery">
+														</a>
+													</li>
+
+													<li>
+														<a href="<%= ofertacuatro.imagetres %>">
+															<img class="xzoom-gallery" width="80"
+																src="<%= ofertacuatro.imagetres %>" alt="Zoom gallery">
+														</a>
+													</li>
+
+													<li>
+														<a href="<%= ofertacuatro.imagedos %>">
+															<img class="xzoom-gallery" width="80"
+																src="<%= ofertacuatro.imagedos %>" alt="Zoom gallery">
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-lg-7 product-brief">
+											<h3><%= ofertacuatro.title %></h3>
+											
+											<h4>Price: $<%= ofertacuatro.price %></h4>
+											<h5>Availability: <span>In Stock</span></h5>
+											<p><%= ofertacuatro.description %>.</p>
+											
+											<ul class="add-to-cart icon-btn">
+												</li>
+												<li><a class="abs-reflect carts" href="/addtocardofertacuatro/<%= ofertacuatro.id %>">Add to Cart</a></li>
+											</ul>
+											
+										</div>
+									</div>
+								</div>
+								<div class="col-12  tab-part">
+									<div class="row">
+										<div class="col-12">
+											<ul class="nav nav-tabs" id="myTab" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active pl-0" id="home-tab" data-toggle="tab"
+														href="#home" role="tab" aria-controls="home"
+														aria-selected="true"> </a>
+												</li>
+												
+											</ul>
+										</div>
+										<div class="col-12">
+											<div class="tab-content" id="myTabContent">
+												<div class="tab-pane fade show active" id="home" role="tabpanel"
+													aria-labelledby="home-tab">
+													<p></p>
+												</div>
+												<div class="tab-pane fade" id="profile" role="tabpanel"
+													aria-labelledby="profile-tab">
+													<p></p>
+												</div>
+												<div class="tab-pane fade" id="contact2" role="tabpanel"
+													aria-labelledby="contact-tab">
+													<p></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12  related-product">
+									<div class="row">
+										<div class="col-12 text-center">
+											<h2></h2>
+										</div>
+										
+												
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!--================ All Product Part HTML End ======================-->
+
+	<!--================ Footer Part HTML Start =============-->
+
+
+
+
+
+
+
+
+<% include ../partials/_footer %>
+

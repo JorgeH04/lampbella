@@ -1,0 +1,57 @@
+<% include ../partials/_header %>
+
+
+<section class="tutorial-early-result">
+    <div class="container">
+        <h3>Tutorial Exam Result Sheet</h3>
+        <div class="tutorial-result">
+
+        <table>
+  <tr>
+
+    <th>SL</th>
+    <th>Name</th>
+    <th>Roll NO</th>
+    <th>Class</th>
+    <th>Department</th>
+      <th>Grade</th>
+  </tr>
+  <% users.forEach(function (user) { %>
+
+  <tr>
+      
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+    <td>01</td>
+    <td>nine</td>
+    <td>Science</td>
+    <td>A+</td>
+  </tr>
+  <% }) %>            
+
+  <tr>
+
+  
+  </tr>
+  <tr>
+     
+      
+  </tr>
+</table>
+        
+        
+        </div>
+          <a href="image/half-exam-result.PNG" download><button type="button" class="result-buttion">Download PDF</button></a>
+  
+</div>
+    
+    
+    
+    </section>
+
+
+
+  <% include ../partials/_footer %>
+
+
+

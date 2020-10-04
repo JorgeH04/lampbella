@@ -1,0 +1,52 @@
+<% include ../partials/_header %>
+
+
+
+
+
+
+<div class="container p-4">
+    <div class="row">
+
+       <div class= "col-md-6 mt-5">
+            <div class="card text-center mx-auto" >
+                 <div class="card-body">
+                      <img src="<%= prodseis.imagePath %>" class="img-fluid">
+                 </div>        
+             </div>
+        </div>
+        <div class= "col-md-6 mt-5">
+ 
+                <div class= "col-md-6 mt-5">
+                        <div class="card text-center mx-auto" >
+                             <div class="card-body">
+                                 <h5><span>Nombre del producto</span>: <%= prodseis.product %></h5>
+                                 <h5>Colores: <%= prodseis.colorstock %></h5>
+                                 <h5>Talles: <%= prodseis.tallestock %></h5>
+                                 <h5>Precio: $<%= prodseis.price %></h5>
+             
+                                   <a class="btn btn-primary" href="/prodseis/edit/<%= prodseis.id %>">Editar</a>
+                             </div>  
+             
+                                 
+                         </div>
+             
+                         <div class="card text-center mx-auto" >
+                           <div class="card-body">
+                            <a class="btn btn-danger" href="/prodseis/delete/<%= prodseis.id %>">
+                              Eliminar
+                          </a>
+                          </div>     
+                       </div>
+                    </div>
+             
+                 </div>
+             </div>
+
+
+
+
+
+
+
+<% include ../partials/_footer %>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="/images/logo.png" type="image/x-icon" />
+	<title>Spa &amp; Theraphy Center</title>
+	<link rel="stylesheet" href="/css/all.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/slick.css">
+	<link rel="stylesheet" href="/css/venobox.css">
+	<link rel="stylesheet" href="/css/range.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/responsive.css">
+	<link rel="stylesheet" href="/css/xzoom.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+
+</head>
+
+<body>
+
+	<!--================ Preloader HTML Start ======================-->
+
+	
+	<!--================ Preloader HTML End ======================-->
+
+	<!--================ Back to Top HTML Start ======================-->
+
+	<div class="top_to">
+		<i class="fas fa-chevron-up"></i>
+	</div>
+
+	<!--================ Back to Top HTML End ======================-->
+
+	<!--================ Header Part HTML Start ======================-->
+
+	<header>
+		<div class="top-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-3">
+						<p>Bienvenidos a Bella</p>
+					</div>
+					<div class="col-lg-8 text-right col-md-8 col-sm-9">
+						<p>Abierto en los horarios de: 09:00 A.M a 08:00 P.M <span>Contacto: <a href="tel:1-123-456-7890">+880 1234 567
+									890</a></span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 p-0">
+						<nav class="navbar navbar-expand-md navbar-light p-0">
+							<a class="navbar-brand" href="/">
+								<img src="/images/logo.png" class="img-fluid" alt="Logo">
+							</a>
+							<ul class="add-to-cart small-cart">
+								<li>
+									<a href="cart.html"><img src="/images/cart.png" alt="Cart Image"></a>
+								</li>
+							</ul>
+							<button class="navbar-toggler" type="button" data-toggle="collapse"
+								data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+								aria-expanded="false" aria-label="Toggle navigation">
+								<span class="fas fa-bars"></span>
+							</button>
+
+							<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul class="navbar-nav mr-auto ml-auto">
+									<li class="nav-item">
+										<a href="/" class="nav-link active">Home </a>
+										
+									</li>
+									<li class="nav-item head-dropdown">
+										<a class="nav-link">Productos <i class="fas fa-chevron-down"></i></a>
+										<ul>
+											<li><a href="/produnoindex/1">Shampoo y Acondicionadores</a></li>
+											<li><a href="/proddosindex/1">Aceites Puros</a></li>
+											<li><a href="/prodtresindex/1">Desodorantes Naturales</a></li>
+											<li><a href="product-details.html">Jabones</a></li>
+											<li><a href="shopping-cart.html">Perfumes</a></li>
+											
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link" href="/sobrenosotros">Sobre nosotros</a>
+									</li>
+									<% if(user) { %>
+
+	
+									<li class="nav-item">
+										<a class="nav-link" href="/perfil/1">Perfil</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/users/logout">Logout</a>
+									</li>
+									<% } else { %>                    
+									<li class="nav-item">
+										<a class="nav-link" href="/contacto">Contacto</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/users/signin">Login</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/users/signup">Registrarse</a>
+									</li>
+								  </ul>
+								  <% } %>
+								  <ul class="add-to-cart">
+									<li>
+										<a href="/shopcart/"><img src="/images/cart.png" alt="Cart Image"></a>
+									</li>
+									<% if(session.cart) { %>
+
+									<li><span class="cart_list"><%= session.cart.totalQty%> Item</span><span class="price"></span></li>
+									<% } %>
+
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!--================ Header Part HTML End ======================-->
